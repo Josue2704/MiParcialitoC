@@ -15,8 +15,14 @@ namespace MiParcialitoC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login");
         }
+
+        public IActionResult Login()
+        {
+            return View("~/Views/Login/Login.cshtml");
+        }
+
 
         public IActionResult Privacy()
         {
@@ -28,5 +34,7 @@ namespace MiParcialitoC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

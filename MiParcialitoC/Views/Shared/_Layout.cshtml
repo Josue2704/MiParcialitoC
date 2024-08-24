@@ -10,6 +10,25 @@
 </head>
 <body>
     <header>
+        @if (!Context.Request.Path.Value.Contains("Login"))
+        {
+            <header>
+                <!-- Aquí va tu menú de navegación -->
+                <nav>
+                    <!-- Contenido del menú -->
+                </nav>
+            </header>
+        }
+
+        <div class="container">
+            @RenderBody()
+        </div>
+
+        <footer>
+            <!-- Pie de página -->
+        </footer>
+
+        @RenderSection("Scripts", required: false)
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MiParcialitoC</a>
